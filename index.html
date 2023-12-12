@@ -1,0 +1,471 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc">
+                    <h3>In relazione al numero di persone che realmente si prevede abitare:</h3>
+                    <p>Persone che vivono in casa propria:</p>
+                    <input type="text" placeholder="numero abitanti stabili" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*C/365">
+                    <p>Abitanti saltuari x n° di giorni/365 =  n° a.e. da aggiungersi ai residenti in casa propria:</p>
+                    <input type="text" class="B" placeholder="n° ospiti" name="" /> 
+                    <input type="text" class="C" placeholder="n° giorni" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            <div class="group" data-subtotal-type="max" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/35">
+                    <h3>In relazione alla superficie lorda o al volume lordo dell'edificio:</h3>
+                    <p>ogni 100 m3 di volume lordo = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="superficie lorda" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/100">
+                    <p>ogni 35 m2 superficie lorda = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="volume lordo" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc">
+                    <h3>In relazione ai posti letto potenziali desunti dalla superficie delle camere da letto:</h3>
+                    <p>sup.camera < 14 m2 = 1 a.e.</p>
+                    <input type="text" placeholder="n° camere 15-20mq" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc">
+                    <p>sup. camera ≥ 14 m2 = 2 a.e. aggiungere 1 a.e. ogni qual volta la superficie di una stanza aumenta di 6 m2 oltre i 14 m2</p>
+                    <input type="text" placeholder="n° camere 15-20mq" name="" /> 
+                    <input type="hidden" class="coefficient" value="2" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc">
+                    <input type="text" placeholder="n° camere 21-26mq" name="" /> 
+                    <input type="hidden" class="coefficient" value="3" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc">
+                    <h3>alberghi, villaggi turistici, agriturismi, case di riposo, e similari:</h3>
+                    <p>in relazione ai posti letto:</p>
+                    <p><small>1-2 posti letto = 1 a.e.</small></p>
+                    <input type="text" placeholder="n° posti letto" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc">
+                    <p>oppure in base alle superfici delle camere da letto e camerate:</p>
+                    <p><small>< 14 m2 = 1 a.e.</small></p>
+                    <input type="text" placeholder="n° camere" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*2">
+                    <p>≥ 14 m2 = 2 a.e. aggiungere 1 a.e. ogni qual volta la superficie di una stanza aumenta di 6 m2 oltre i 14 m2</p>
+                    <input type="text" class="B" placeholder="n° camere 14-19mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*3">
+                    <input type="text" class="B" placeholder="n° camere 20-25mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*4">
+                    <input type="text" class="B" placeholder="n° camere 26-31mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="((B-13)/6)+1">
+                    <p>Camerate (superfici >32mq)</p>
+                    <input type="text" class="B" placeholder="superficie camerata 2 mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="((B-13)/6)+1">
+                    <input type="text" class="B" placeholder="superficie camerata 3 mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="((B-13)/6)+1">
+                    <input type="text" class="B" placeholder="superficie camerata 4 mq" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" />
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc">
+                    <h3>campeggi:</h3>
+                    <p>in relazione ai posti letto:</p>
+                    <p><small>1-2 posti letto = 1 a.e.</small></p>
+                    <input type="text" class="B" placeholder="n° potenziale di posti letto" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/10">
+                    <h3>scuole:</h3>
+                    <p>5-10 alunni = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° potenziale di alunni + professori" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti-personale" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/10">
+                    <h3>palestre:</h3>
+                    <p>5-10 frequentatori = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="5-10 frequentatori" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*6">
+                    <p>1 doccia  = 5-8 a.e.</p>
+                    <input type="text" class="B" placeholder="n° docce" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/3">
+                    <h3>ristoranti, mense, trattorie:</h3>
+                    <p>in base al n° di coperti prodotti giornalmente nel momento di massima attività</p>
+                    <p>3-5 coperti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° coperti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc">
+                    <p>in base al n° di posti a sedere considerando 3 turni giornalieri nel momento di massimo afflusso</p>
+                    <p>Posto a sedere = 1/3 ÷ 1 a.e.</p>
+                    <input type="text" placeholder="n° posti a sedere" name="" /> 
+                    <input type="hidden" class="coefficient" value="1" disabled /> =
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <h3>in base alla superficie della sala da pranzo (1 persona occupa 1,20 m2):</h3>
+                    <p>3,60 m2 = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="superficie zona consumazione pasti mq" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/3">
+                    <h3>uffici, negozi, attività commerciali in genere:</h3>
+                    <p>3 impiegati = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° impiegati" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/2">
+                    <h3>fabbriche, laboratori artigianali che non producano acque reflue di lavorazione:</h3>
+                    <p>2 lavoratori = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° lavoratori" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 impiegati = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° impiegati" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B*4">
+                    <h3>cinema, teatri, sale convegni, musei, auditorium, impianti sportivi:</h3>
+                    <p>1 w.c. = 2-6 a.e.</p>
+                    <input type="text" class="B" placeholder="n° servizi igienici" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/30">
+                    <p>30 posti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° posti a sedere" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/(1.2*7)">
+                    <h3>bar, circoli, clubs:</h3>
+                    <p>7 clienti (1 cliente occupa 1,20 m2) = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="Superficie del bar mq" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*3">
+                    <p>1 w.c. = 1-6 a.e</p>
+                    <input type="text" class="B" placeholder="n° wc" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B*1.25">
+                    <h3>ospedali, case di riposo:</h3>
+                    <p>1 letto = 1÷2,5 a.e.</p>
+                    <input type="text" class="B" placeholder="n°posti letto" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B*1.5">
+                    <h3>caserme, prigioni</h3>
+                    <p>1 posto letto = 1,5 a.e.</p>
+                    <input type="text" class="B" placeholder="n°posti letto" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section style="background-color: #dedede; border: 1px solid #cccccc; padding: 1rem;">
+            <div class="group" data-subtotal-type="sum" style="background-color: #ffffff; margin-bottom: 1rem; padding: 1rem;">
+                <div class="section-calc-formula" data-formula="B/6">
+                    <h3>stazioni di servizio ed autogrill:</h3>
+                    <p>6 autoveicoli = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° veicoli giornaliero max" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B*6">
+                    <p>1 w.c. = 4-8 a.e.</p>
+                    <input type="text" class="B" placeholder="n° wc " name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+                <div class="section-calc-formula" data-formula="B/3">
+                    <p>3 addetti = 1 a.e.</p>
+                    <input type="text" class="B" placeholder="n° addetti" name="" /> 
+                    <input type="text" readonly class="result" name="" />
+                </div>
+
+                <div class="">
+                    <p>Subtotale</p>
+                    <input type="text" placeholder="subtotale" readonly class="subtotal" name="" />
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <script>
+            function calculateResult(event) {
+                var inputElement = event.target;
+                var parentDiv = inputElement.closest('div');
+                var coefficient = parentDiv.querySelector('.coefficient').value;
+                var result = inputElement.value * coefficient;
+                result = Math.ceil(result);
+                parentDiv.querySelector('.result').value = result;
+
+                updateSubtotalAndTotal(inputElement);
+            }
+
+            // Funzione per calcolare e aggiornare il risultato
+            function calculateFormula(event) {
+                var inputElement = event.target;
+                var section = event.target.closest('.section-calc-formula');
+                var formula = section.dataset.formula;
+
+                // Estrai i valori necessari in base alla formula
+                var B = section.querySelector('.B') ? parseFloat(section.querySelector('.B').value) || 0 : 1;
+                var C = section.querySelector('.C') ? parseFloat(section.querySelector('.C').value) || 0 : 1;
+
+                // Calcola il risultato in base alla formula
+                var result = eval(formula.replace('B', B).replace('C', C));
+
+                // Aggiorna il campo del risultato
+                section.querySelector('.result').value = Math.ceil(result);
+
+                updateSubtotalAndTotal(inputElement);
+            }
+
+            function updateSubtotalAndTotal(inputElement) {
+                var group = inputElement.closest('.group');
+                var subtotalType = group.dataset.subtotalType;
+                var results = group.querySelectorAll('.result');
+                var subtotal = 0;
+            
+                // Calcola subtotal in base al tipo
+                if (subtotalType === "max") {
+                    subtotal = Math.max(...Array.from(results).map(input => parseFloat(input.value) || 0));
+                } else { // Default a somma
+                    subtotal = Array.from(results).reduce((sum, input) => sum + (parseFloat(input.value) || 0), 0);
+                }
+            
+                // Aggiorna il subtotal nel gruppo
+                group.querySelector('.subtotal').value = subtotal;
+            
+                // Aggiorna il totale
+                updateTotal();
+            }
+            
+            // Funzione per aggiornare il totale
+            function updateTotal() {
+                var totalType = document.querySelector('.group[data-total-type]').dataset.totalType;
+                var allSubtotals = document.querySelectorAll('.subtotal');
+                var total = 0;
+            
+                // Calcola totale in base al tipo
+                if (totalType === "max") {
+                    total = Math.max(...Array.from(allSubtotals).map(input => parseFloat(input.value) || 0));
+                } else { // Default a somma
+                    total = Array.from(allSubtotals).reduce((sum, input) => sum + (parseFloat(input.value) || 0), 0);
+                }
+            
+                // Aggiorna il campo totale
+                document.querySelector('.total').value = total;
+            }
+            
+            // Event listeners per le sezioni normali e con formula
+            var normalInputFields = document.querySelectorAll('.section-calc input[type="text"]:not(.coefficient):not(.result)');
+            var formulaInputFields = document.querySelectorAll('.section-calc-formula input[type="text"]:not(.coefficient):not(.result)');
+            
+            normalInputFields.forEach(function(input) {
+                input.addEventListener('input', calculateResult);
+            });
+            formulaInputFields.forEach(function(input) {
+                input.addEventListener('input', calculateFormula);
+            });
+        </script>
+    </body>
+</html>
